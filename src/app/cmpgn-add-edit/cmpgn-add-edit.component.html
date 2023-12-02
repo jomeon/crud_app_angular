@@ -19,7 +19,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>Campaign fund - mandatory and deducted from their Emerald account 
                     funds, new balance updated on screen</mat-label>
-                <input matInput type="number" formControlName="campaingFund" min="0">
+                <input matInput type="number" formControlName="campaignFund" min="0">
             </mat-form-field>
             <label id="status-group-label">Select status</label>
             <mat-radio-group aria-label="Select an option of Status" class="mrg-space" formControlName="selectStatus">
@@ -46,8 +46,8 @@
 
     <div mat-dialog-actions >
         <div class="down-button">
-            <button mat-raised-button>Cancel</button>
-            <button mat-raised-button color="primary" type="submit">Save</button>
+            <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+            <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
         </div>
     </div>
 </form>

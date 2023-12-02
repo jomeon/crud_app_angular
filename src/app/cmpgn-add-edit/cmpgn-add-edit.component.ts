@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogModule } from '@angular/material/dialog'
+import { Component, Inject,OnInit  } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog'
 import { MatButtonModule } from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
@@ -10,63 +10,14 @@ import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { Observable, of,OperatorFunction} from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CampaignService } from '../services/campaign.service';
+import { DialogRef } from '@angular/cdk/dialog';
+import { CoreService } from '../core/core.service';
 
 interface City {
   value: string;
   viewValue: string;
 }
-const states: { name: string }[] = [
-	{ name: 'Alabama' },
-	{ name: 'Alaska' },
-	{ name: 'Arizona' },
-	{ name: 'Arkansas' },
-	{ name: 'California' },
-	{ name: 'Colorado' },
-	{ name: 'Connecticut' },
-	{ name: 'Delaware' },
-	{ name: 'Florida' },
-	{ name: 'Georgia' },
-	{ name: 'Hawaii' },
-	{ name: 'Idaho' },
-	{ name: 'Illinois' },
-	{ name: 'Indiana' },
-	{ name: 'Iowa' },
-	{ name: 'Kansas' },
-	{ name: 'Kentucky' },
-	{ name: 'Louisiana' },
-	{ name: 'Maine' },
-	{ name: 'Maryland' },
-	{ name: 'Massachusetts' },
-	{ name: 'Michigan' },
-	{ name: 'Minnesota' },
-	{ name: 'Mississippi' },
-	{ name: 'Missouri' },
-	{ name: 'Montana' },
-	{ name: 'Nebraska' },
-	{ name: 'Nevada' },
-	{ name: 'New Hampshire' },
-	{ name: 'New Jersey' },
-	{ name: 'New Mexico' },
-	{ name: 'New York' },
-	{ name: 'North Carolina' },
-	{ name: 'North Dakota' },
-	{ name: 'Ohio' },
-	{ name: 'Oklahoma' },
-	{ name: 'Oregon' },
-	{ name: 'Pennsylvania' },
-	{ name: 'Rhode Island' },
-	{ name: 'South Carolina' },
-	{ name: 'South Dakota' },
-	{ name: 'Tennessee' },
-	{ name: 'Texas' },
-	{ name: 'Utah' },
-	{ name: 'Vermont' },
-	{ name: 'Virginia' },
-	{ name: 'Washington' },
-	{ name: 'West Virginia' },
-	{ name: 'Wisconsin' },
-	{ name: 'Wyoming' },
-];
 
 @Component({
   selector: 'app-cmpgn-add-edit',
@@ -75,7 +26,7 @@ const states: { name: string }[] = [
   templateUrl: './cmpgn-add-edit.component.html',
   styleUrl: './cmpgn-add-edit.component.scss',
 })
-export class CmpgnAddEditComponent {
+export class CmpgnAddEditComponent implements OnInit{
   cmpgnForm: FormGroup;
 
   cities: City[] = [
@@ -99,13 +50,13 @@ export class CmpgnAddEditComponent {
 
 formatter =  (result: string) => result;
     
-  constructor(private _fb: FormBuilder) {
+  constructor(private _fb: FormBuilder, private _cmpgnService: CampaignService, private _dialogRef: MatDialogRef<CmpgnAddEditComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private _coreService: CoreService) {
     this.cmpgnForm = this._fb.group(
       {
         campaignName: ['', Validators.required],
         keywords: ['',Validators.required],
         bidAmmount: ['',Validators.required],
-        campaingFund: ['',Validators.required],
+        campaignFund: ['',Validators.required],
         selectStatus: ['',Validators.required],
         town: '',
         radius: ['',Validators.required],
@@ -114,10 +65,38 @@ formatter =  (result: string) => result;
     );
 
   }
+  ngOnInit(): void {
+    this.cmpgnForm.patchValue(this.data);
+  }
   onFormSubmit(){
     if(this.cmpgnForm.valid)
     {
-      console.log(this.cmpgnForm.value);
+      if(this.data)
+      {
+        this._cmpgnService.updateCampaign(this.data.id, this.cmpgnForm.value).subscribe({
+          next: (val: any) => {
+            this._coreService.openSnackBar('Campaign updated successfuly','done');
+            this._dialogRef.close(true);
+  
+          },
+          error: (err: any) =>{
+            console.error(err);
+          },
+        });
+      } else{
+        this._cmpgnService.addCampaign(this.cmpgnForm.value).subscribe({
+          next: (val: any) => {
+            this._coreService.openSnackBar('Campaign added successfuly','done');
+            this._dialogRef.close(true);
+  
+          },
+          error: (err: any) =>{
+            console.error(err);
+          },
+        });
+      }
+     
+      //console.log(this.cmpgnForm.value);
     }
   }
 }

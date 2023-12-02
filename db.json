@@ -1,0 +1,81 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "campaigns": [
+    {
+      "campaignName": "s",
+      "keywords": "dad",
+      "bidAmmount": 2137,
+      "campaignFund": 323,
+      "selectStatus": "false",
+      "town": "city-1",
+      "radius": 33,
+      "id": 8
+    },
+    {
+      "campaignName": "sd",
+      "keywords": "asdas",
+      "bidAmmount": 2137,
+      "campaignFund": 33,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 33,
+      "id": 9
+    },
+    {
+      "campaignName": "123123",
+      "keywords": "13",
+      "bidAmmount": 3,
+      "campaignFund": 3,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 3,
+      "id": 10
+    },
+    {
+      "campaignName": "d",
+      "keywords": "d",
+      "bidAmmount": 2,
+      "campaignFund": 33,
+      "selectStatus": "false",
+      "town": "city-1",
+      "radius": 33,
+      "id": 11
+    },
+    {
+      "campaignName": "1",
+      "keywords": "1",
+      "bidAmmount": 23,
+      "campaignFund": 33,
+      "selectStatus": "true",
+      "town": "city-0",
+      "radius": 3,
+      "id": 12
+    },
+    {
+      "campaignName": "23",
+      "keywords": "23",
+      "bidAmmount": 3,
+      "campaignFund": 3,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 3,
+      "id": 13
+    }
+  ]
+}
