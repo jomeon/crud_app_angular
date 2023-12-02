@@ -1,0 +1,46 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .mrg-space{
+        justify-content: space-between;
+    }
+  }
+.down-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button{
+        flex: 1;
+    }
+}
+
+ngb-typeahead-window {
+    
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  ::ng-deep .dropdown-menu.show { background:lightblue;
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    width: auto;
+    height: auto;
+  }
+  ::ng-deep .dropdown-item
+  {
+    height: 100px;
+  }

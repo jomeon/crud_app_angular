@@ -1,0 +1,53 @@
+<div mat-dialog-title>
+    <h1>Campaing Form</h1>
+</div>
+<form [formGroup]="cmpgnForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content>
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Campaign Name - mandatory</mat-label>
+                <input matInput type="text" formControlName ="campaignName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label >keywords - pre-populated with typeahead mandatory</mat-label>
+                <input matInput type="text" formControlName="keywords" [ngbTypeahead]="search">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Bid amount - min -amount</mat-label>
+                <input matInput type="number" formControlName="bidAmmount" min="0">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Campaign fund - mandatory and deducted from their Emerald account 
+                    funds, new balance updated on screen</mat-label>
+                <input matInput type="number" formControlName="campaingFund" min="0">
+            </mat-form-field>
+            <label id="status-group-label">Select status</label>
+            <mat-radio-group aria-label="Select an option of Status" class="mrg-space" formControlName="selectStatus">
+                <mat-radio-button value=true>On</mat-radio-button>
+                <mat-radio-button value=false>Off</mat-radio-button>
+            </mat-radio-group>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Choose Town</mat-label>
+                <mat-select formControlName="town">
+                    @for (city of cities; track city) {
+                    <mat-option [value]="city.value">{{city.viewValue}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label >Radius (mandatory in kilometres)</mat-label>
+                <input matInput type="number" formControlName="radius" min="0">
+                <mat-hint> in kilometres</mat-hint>
+            </mat-form-field>
+        </div>
+        
+    </div>
+
+    <div mat-dialog-actions >
+        <div class="down-button">
+            <button mat-raised-button>Cancel</button>
+            <button mat-raised-button color="primary" type="submit">Save</button>
+        </div>
+    </div>
+</form>
