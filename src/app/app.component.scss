@@ -10,3 +10,19 @@
 .filter-field{
   width: 100%;
 }
+
+@media(max-width: 400px)
+{
+  .mat-toolbar{
+    flex-direction: column ;
+    padding-top: 1em;
+    padding-bottom: 4em;
+  }
+}
+@media(max-width: 900px)
+{
+  .mdc-data-table__header-cell{
+    padding: 0 2px 0 2px;
+  }
+  
+}

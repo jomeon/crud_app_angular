@@ -76,6 +76,16 @@
       "town": "city-1",
       "radius": 3,
       "id": 13
+    },
+    {
+      "campaignName": "asdad",
+      "keywords": "dadsa",
+      "bidAmmount": 15,
+      "campaignFund": 2,
+      "selectStatus": "false",
+      "town": "city-1",
+      "radius": 33,
+      "id": 14
     }
   ]
 }

@@ -15,7 +15,8 @@
     width: 100%;
 
     .mrg-space{
-        justify-content: space-between;
+        display: flex;
+        justify-content: center;
     }
   }
 .down-button{
@@ -44,3 +45,32 @@ ngb-typeahead-window {
   {
     height: 100px;
   }
+  ::ng-deep .cdk-overlay-pane{
+    width: 95%;
+  }
+  ::ng-deep .ng-pristine{
+    width: 95%;
+  }
+  ::ng-deep .ng-dirty{
+    width: 95%;
+  }
+  ::ng-deep .mat-mdc-dialog-actions{
+    justify-content: center;
+  }
+
+  ::ng-deep .mat-mdc-radio-group{
+    justify-content: center;
+  }
+  @media(max-width: 500px)
+  {
+    :host {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+  }
+ 
