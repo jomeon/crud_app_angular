@@ -16,7 +16,7 @@
   "budget": [
     {
       "id": 1,
-      "amount": 1000
+      "amount": 348
     }
   ],
   "profile": {
@@ -102,6 +102,156 @@
       "town": "city-1",
       "radius": 33,
       "id": 20
+    },
+    {
+      "campaignName": "xddddddddddddddddddddddd",
+      "keywords": "proszezatrunijciemnie",
+      "bidAmmount": 123,
+      "campaignFund": 200,
+      "selectStatus": "true",
+      "town": "city-2",
+      "radius": 3,
+      "id": 21
+    },
+    {
+      "campaignName": "131",
+      "keywords": "33",
+      "bidAmmount": 2,
+      "campaignFund": 200,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 33,
+      "id": 22
+    },
+    {
+      "campaignName": "131",
+      "keywords": "33",
+      "bidAmmount": 2,
+      "campaignFund": 200,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 33,
+      "id": 23
+    },
+    {
+      "campaignName": "sdd",
+      "keywords": "2",
+      "bidAmmount": 23,
+      "campaignFund": 233,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 233,
+      "id": 24
+    },
+    {
+      "campaignName": "w",
+      "keywords": "w",
+      "bidAmmount": 1,
+      "campaignFund": 1,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 1,
+      "id": 25
+    },
+    {
+      "campaignName": "sss",
+      "keywords": "sss",
+      "bidAmmount": 23,
+      "campaignFund": 2,
+      "selectStatus": "true",
+      "town": "city-2",
+      "radius": 333,
+      "id": 26
+    },
+    {
+      "campaignName": "s",
+      "keywords": "sss",
+      "bidAmmount": 2,
+      "campaignFund": 4,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 33,
+      "id": 27
+    },
+    {
+      "campaignName": "prosze dzialaj",
+      "keywords": "33",
+      "bidAmmount": 2,
+      "campaignFund": 33,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 2,
+      "id": 28
+    },
+    {
+      "campaignName": "233",
+      "keywords": "sss",
+      "bidAmmount": 2,
+      "campaignFund": 20,
+      "selectStatus": "false",
+      "town": "city-1",
+      "radius": 33,
+      "id": 29
+    },
+    {
+      "campaignName": "sds",
+      "keywords": "2",
+      "bidAmmount": 22,
+      "campaignFund": 2,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 2,
+      "id": 30
+    },
+    {
+      "campaignName": "33",
+      "keywords": "s",
+      "bidAmmount": 3,
+      "campaignFund": 2,
+      "selectStatus": "true",
+      "town": "city-2",
+      "radius": 2,
+      "id": 31
+    },
+    {
+      "campaignName": "2",
+      "keywords": "s",
+      "bidAmmount": 2,
+      "campaignFund": 22,
+      "selectStatus": "true",
+      "town": "city-0",
+      "radius": 2,
+      "id": 32
+    },
+    {
+      "campaignName": "ss",
+      "keywords": "s",
+      "bidAmmount": 2,
+      "campaignFund": 10,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 2,
+      "id": 33
+    },
+    {
+      "campaignName": "s",
+      "keywords": "s",
+      "bidAmmount": 2,
+      "campaignFund": 10,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 3,
+      "id": 34
+    },
+    {
+      "campaignName": "2",
+      "keywords": "33",
+      "bidAmmount": 1,
+      "campaignFund": 10,
+      "selectStatus": "true",
+      "town": "city-0",
+      "radius": 7,
+      "id": 35
     }
   ]
 }

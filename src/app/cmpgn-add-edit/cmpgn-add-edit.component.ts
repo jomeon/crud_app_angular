@@ -88,7 +88,7 @@ formatter =  (result: string) => result;
           next: (val: any) => {
             this._coreService.openSnackBar('Campaign added successfuly','done');
             this._dialogRef.close(true);
-  
+            
           },
           error: (err: any) =>{
             console.error(err);

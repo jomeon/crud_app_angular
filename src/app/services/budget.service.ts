@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 export interface Budget {
   id: number;
@@ -20,7 +20,16 @@ export class BudgetService {
 
  
   updateBudget(updatedBudget: Budget): Observable<Budget> {
-    return this.http.put<Budget>(`${this.apiUrl}/${updatedBudget.id}`, updatedBudget);
+    return this.http.put<Budget>(`${this.apiUrl}`, updatedBudget);
+  }
+
+  updateBudgetAfterCampaignAddition(campaignFund: number): Observable<Budget> {
+    return this.getBudget().pipe(
+      switchMap((currentBudget: Budget) => {
+        currentBudget.amount -= campaignFund;
+        return this.updateBudget(currentBudget);
+      })
+    );
   }
   
 

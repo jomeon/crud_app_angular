@@ -41,9 +41,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCampaignList();
-    this._budgetService.getBudget().subscribe(budget => {
-      this.currentBudget = budget.amount;
-    });
+    this.getBudgetOnSite();
   }
   
   openAddEditCmpgnForm() {
@@ -52,12 +50,18 @@ export class AppComponent implements OnInit {
       next: (val) => {
         if(val){
           this.getCampaignList();
+          this.getBudgetOnSite();
         }
 
       },
     })
   }
-  
+  getBudgetOnSite(){
+    this._budgetService.getBudget().subscribe(budget => {
+      this.currentBudget = budget.amount;
+  });
+  }
+
   getCampaignList(){
     this._cmpgnService.getCampaingList().subscribe({
       next: (res) => {
@@ -94,6 +98,7 @@ export class AppComponent implements OnInit {
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if(val){
+          this.getBudgetOnSite();
           this.getCampaignList();
         }
 
