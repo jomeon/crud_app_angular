@@ -15,6 +15,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { CoreService } from './core/core.service';
+import { BudgetService } from './services/budget.service';
 // tu chyba nie trzeba tych importow
 
 @Component({
@@ -29,12 +30,16 @@ export class AppComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'campaignName', 'keywords', 'bidAmmount', 'campaignFund', 'selectStatus', 'town', 'radius', 'action'];
   dataSource!: MatTableDataSource<any>;
-
+  currentBudget!: number;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private _dialog: MatDialog, private _cmpgnService: CampaignService, private _coreService: CoreService) {}
+  constructor(private _dialog: MatDialog, private _cmpgnService: CampaignService, private _coreService: CoreService, private _budgetService: BudgetService) {
+    this._budgetService.currentBudget.subscribe(budget => {
+      this.currentBudget = budget;
+    });
+  }
 
   ngOnInit(): void {
     this.getCampaignList();

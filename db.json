@@ -13,50 +13,14 @@
       "postId": 1
     }
   ],
+  "budget":[{
+    "id": 1,
+    "amount": 1000
+  }],
   "profile": {
     "name": "typicode"
   },
   "campaigns": [
-    {
-      "campaignName": "s",
-      "keywords": "dad",
-      "bidAmmount": 2137,
-      "campaignFund": 323,
-      "selectStatus": "false",
-      "town": "city-1",
-      "radius": 33,
-      "id": 8
-    },
-    {
-      "campaignName": "sd",
-      "keywords": "asdas",
-      "bidAmmount": 2137,
-      "campaignFund": 33,
-      "selectStatus": "true",
-      "town": "city-1",
-      "radius": 33,
-      "id": 9
-    },
-    {
-      "campaignName": "123123",
-      "keywords": "13",
-      "bidAmmount": 3,
-      "campaignFund": 3,
-      "selectStatus": "true",
-      "town": "city-1",
-      "radius": 3,
-      "id": 10
-    },
-    {
-      "campaignName": "d",
-      "keywords": "d",
-      "bidAmmount": 2,
-      "campaignFund": 33,
-      "selectStatus": "false",
-      "town": "city-1",
-      "radius": 33,
-      "id": 11
-    },
     {
       "campaignName": "1",
       "keywords": "1",
@@ -86,6 +50,46 @@
       "town": "city-1",
       "radius": 33,
       "id": 14
+    },
+    {
+      "campaignName": "s",
+      "keywords": "sd",
+      "bidAmmount": 3,
+      "campaignFund": 33,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 3,
+      "id": 15
+    },
+    {
+      "campaignName": "sd",
+      "keywords": "dsd",
+      "bidAmmount": 2,
+      "campaignFund": 2,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 2,
+      "id": 16
+    },
+    {
+      "campaignName": "s",
+      "keywords": "ds",
+      "bidAmmount": 2,
+      "campaignFund": 333,
+      "selectStatus": "true",
+      "town": "city-0",
+      "radius": 33,
+      "id": 18
+    },
+    {
+      "campaignName": "111111111111",
+      "keywords": "111",
+      "bidAmmount": 315,
+      "campaignFund": 22,
+      "selectStatus": "true",
+      "town": "city-1",
+      "radius": 313,
+      "id": 19
     }
   ]
 }

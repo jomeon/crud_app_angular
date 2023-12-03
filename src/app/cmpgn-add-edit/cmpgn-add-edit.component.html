@@ -8,7 +8,7 @@
                 <mat-label>Campaign Name - mandatory</mat-label>
                 <input matInput type="text" formControlName ="campaignName">
             </mat-form-field>
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="example-chip-list">
                 <mat-label >keywords - pre-populated with typeahead mandatory</mat-label>
                 <input matInput type="text" formControlName="keywords" [ngbTypeahead]="search">
             </mat-form-field>
