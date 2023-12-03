@@ -36,13 +36,14 @@ export class AppComponent implements OnInit {
 
 
   constructor(private _dialog: MatDialog, private _cmpgnService: CampaignService, private _coreService: CoreService, private _budgetService: BudgetService) {
-    this._budgetService.currentBudget.subscribe(budget => {
-      this.currentBudget = budget;
-    });
+
   }
 
   ngOnInit(): void {
     this.getCampaignList();
+    this._budgetService.getBudget().subscribe(budget => {
+      this.currentBudget = budget.amount;
+    });
   }
   
   openAddEditCmpgnForm() {

@@ -22,6 +22,8 @@ export class BudgetService {
   updateBudget(updatedBudget: Budget): Observable<Budget> {
     return this.http.put<Budget>(`${this.apiUrl}/${updatedBudget.id}`, updatedBudget);
   }
+  
+
 }
 
 
