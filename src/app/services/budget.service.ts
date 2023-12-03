@@ -9,16 +9,16 @@ export interface Budget {
   providedIn: 'root'
 })
 export class BudgetService {
-  private apiUrl = 'http://localhost:3000/budget'
+  private apiUrl = 'http://localhost:3000/budget/1'
 
   constructor(private http: HttpClient) {}
 
-  // Pobierz aktualny budżet
+ 
   getBudget(): Observable<Budget> {
     return this.http.get<Budget>(this.apiUrl);
   }
 
-  // Zaktualizuj budżet
+ 
   updateBudget(updatedBudget: Budget): Observable<Budget> {
     return this.http.put<Budget>(`${this.apiUrl}/${updatedBudget.id}`, updatedBudget);
   }
